@@ -1,0 +1,41 @@
+@import "style";
+
+// ヘッダー
+header {
+  @include width-height(100vw, 60px);
+  background-color: $yellow;
+  display: flex;
+  padding: 10px 20px;
+  .HeaderLeft {
+    width: 20%;
+    &__logo {
+      font-size: 30px;
+      line-height: 40px;
+      font-weight: bold;
+      color: $black1;
+      text-decoration: none;
+      
+    }
+  }
+  .HeaderRight{
+    width: 80%;
+    text-align: right;
+    &__btn {
+      max-width: 150px;
+      border: solid 2px white;
+      overflow:hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+// フッター
+footer {
+  margin-top: auto;
+  background-color: $yellow;
+  @include width-height(100vw, 60px);
+  text-align: center;
+  line-height: 60px;
+  font-size: 14px;
+}

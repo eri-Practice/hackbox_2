@@ -1,0 +1,37 @@
+@import "style";
+
+.Main {
+  width: 100vw;
+  padding: 50px 10%;
+  background-color: $cream;
+  .KeywordWrapper {
+    .Form {
+      height: 30px;
+      &__inputKeyword {
+        padding: 2px 5px;
+        height: 100%;
+        line-height: 100%;
+        border-radius: 3px;
+        border: 1px solid $black3;
+      }
+      &__submit {
+        padding: 5px 10px;
+        margin-left: 10px;
+        height: 100%;
+        line-height: 100%;
+        border: none;
+        background-color: $yellow;
+        padding: 8px 20px;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 3px;
+        display: inline-block;
+        cursor: pointer;
+      }
+    }
+  }
+  .GenresWrapper {
+  }
+  .PostsWrapper {
+  }
+}

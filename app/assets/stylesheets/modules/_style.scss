@@ -1,0 +1,85 @@
+// 定義
+$yellow: #ffd31d;
+$cream: #fef7e4;
+$coral: #ffd385;
+$pink: #ff7272;
+$lightpink: pink;
+$black1: #444;
+$black2: #666;
+$black3: #888;
+
+@mixin width-height($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+.Container {
+  padding: 30px;
+  margin-bottom: 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.Box {
+  margin: 20px;
+}
+
+h1 {
+  font-size: 18px;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+.btn {
+  height: 40px;
+  line-height: 24px;
+  padding: 8px 15px;
+  font-size: 15px;
+  margin: auto 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.PinkBtn {
+  background-color: $pink;
+  margin-bottom: 15px;
+} 
+
+
+.no-decoration {
+  text-decoration: none;
+}
+
+// 投稿ユーザーと投稿日時
+.PostInfo {
+  height: 20px;
+  font-size: 14px;
+  display: flex;
+  margin-bottom: 0;
+  width: 100%;
+  &__user {
+    text-align: left;
+    width: 200px;
+    margin-right: auto;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    .UserLink {
+      text-decoration: none;
+      color: $black3;
+    }
+  }
+  &__date {
+    color: $black3;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
