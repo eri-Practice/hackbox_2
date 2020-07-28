@@ -14,7 +14,7 @@ if Rails.env.production?
     }
     config.fog_directory     =  'hackbox'
     config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/hackbox'
+    # config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/hackbox'
   end
 
   # 日本語ファイル名の設定
