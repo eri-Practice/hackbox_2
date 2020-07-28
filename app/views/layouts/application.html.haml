@@ -16,16 +16,18 @@
       .HeaderRight
         =link_to  search_posts_path, class: "HeaderRight__btn btn" do
           投稿を探す
-        -# - if user_signed_in?
-        -#   =link_to new_post_path, class: "HeaderRight__btn btn" do
-        -#     ➕
-        -#   =link_to user_path(current_user.id), class: "HeaderRight__btn btn" do
-        -#     =current_user.name
-        -# - else
-        -#   =link_to new_user_session_path, class: "HeaderRight__btn btn" do
-        -#     ログイン
-        -#   =link_to new_user_registration_path, class: "HeaderRight__btn btn" do
-        -#     新規登録
+        - if user_signed_in?
+          =link_to new_post_path, class: "HeaderRight__btn btn" do
+            ➕
+          =link_to destroy_user_session_path, method: :delete, class: "HeaderRight__btn btn" do
+            ログアウト
+          =link_to user_path(current_user.id), class: "HeaderRight__btn btn" do
+            =current_user.name
+        - else
+          =link_to new_user_session_path, class: "HeaderRight__btn btn" do
+            ログイン
+          =link_to new_user_registration_path, class: "HeaderRight__btn btn" do
+            新規登録
     .Main
       = yield
     %footer

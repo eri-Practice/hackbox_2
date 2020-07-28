@@ -1,0 +1,47 @@
+.Container
+  .UserTop
+    .UserTop__left
+      - if  @user.image.present?
+        = image_tag @user.image.url, class: 'UserImage'
+      - else
+        = image_tag "デフォルト画像.png", alt: "画像", class: 'UserImage'
+    .UserTop__right
+      .UserName
+        = @user.name
+  .UserProfile
+    %h2 自己紹介
+    = @user.profile
+  - if user_signed_in? && current_user.id == @user.id
+    .UserEdit
+      =link_to edit_user_path(@user.id), class: "PinkBtn btn" do
+        プロフィールの編集
+      =link_to destroy_user_session_path, method: :delete, class: "PinkBtn btn" do
+        ログアウト
+-# .Container
+-#   %h1= "#{@user.name} さんの投稿"
+-#   .PostsWrapper
+-#     = render @posts
+
+-# .SearchTop
+-#   %ul.TabGroup
+-#     %li
+-#       =link_to "#1", class: "tab active" do
+-#         投稿 
+-#     %li
+-#       =link_to "#2", class: "tab" do
+-#         イイね
+-#     %li
+-#       =link_to "#3", class: "tab" do
+-#         フォロワーとか
+-# .Container
+-#   .PanelGroup
+-#     #panel1.panel.show
+-#       .PanelWrapper
+-#         .PostsWrapper
+-#           = render @posts
+-#     #plnel2.panel
+-#       .PanelWrapper
+-#         いいねした投稿
+-#     #panel3.panel
+-#       .PanelWrapper
+-#         フォロワーとか
