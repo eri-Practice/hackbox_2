@@ -1,10 +1,10 @@
 .Container
   .UserTop
     .UserTop__left
-      -# - if  @user.image.present?
-      -#   = image_tag @user.image.url, class: 'UserImage'
-      -# - else
-      -#   = image_tag "デフォルト画像.png", alt: "画像", class: 'UserImage'
+      - if  @user.image.present?
+        = image_tag @user.image.url, class: 'UserImage'
+      - else
+        = image_tag "デフォルト画像.png", alt: "画像", class: 'UserImage'
     .UserTop__right
       .UserName
         = @user.name
