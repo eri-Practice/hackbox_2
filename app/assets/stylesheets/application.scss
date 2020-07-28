@@ -1,11 +1,12 @@
-@import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "modules/header-footer";
 @import "modules/flash";
+@import "modules/style";
+@import "modules/header-footer";
+@import "modules/posts";
 @import "modules/top-page";
 @import "modules/user";
-@import "modules/posts";
+@import "reset";
 
 * {
   box-sizing: border-box;
