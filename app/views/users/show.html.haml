@@ -22,26 +22,26 @@
 -#   .PostsWrapper
 -#     = render @posts
 
--# .SearchTop
--#   %ul.TabGroup
--#     %li
--#       =link_to "#1", class: "tab active" do
--#         投稿 
--#     %li
--#       =link_to "#2", class: "tab" do
--#         イイね
--#     %li
--#       =link_to "#3", class: "tab" do
--#         フォロワーとか
--# .Container
--#   .PanelGroup
--#     #panel1.panel.show
--#       .PanelWrapper
--#         .PostsWrapper
--#           = render @posts
--#     #plnel2.panel
--#       .PanelWrapper
--#         いいねした投稿
--#     #panel3.panel
--#       .PanelWrapper
--#         フォロワーとか
+.SearchTop
+  %ul.TabGroup
+    %li
+      =link_to "#1", class: "tab active" do
+        投稿 
+    %li
+      =link_to "#2", class: "tab" do
+        イイね
+    %li
+      =link_to "#3", class: "tab" do
+        フォロワーとか
+.Container
+  .PanelGroup
+    #panel1.panel.show
+      .PanelWrapper
+        .PostsWrapper
+          = render @posts
+    #plnel2.panel
+      .PanelWrapper
+        いいねした投稿
+    #panel3.panel
+      .PanelWrapper
+        フォロワーとか

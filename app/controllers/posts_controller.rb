@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :show]
+  before_action :set_post, only: [:edit, :show, :destroy, :update]
   before_action :move_to_index, except: [:index, :show, :search, :category, :rank]
 
   def index
@@ -20,23 +20,24 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
-    redirect_to root_path, notice: '投稿を削除しました'
+    if @post.destroy
+      redirect_to root_path, notice: '投稿を削除しました'
+    else
+      render :show, notice: '投稿を削除できませんでした'
+    end
   end
 
   def show
-    @comment = Comment.new
-    @comments = @post.comments.includes(:user)
+    # @comment = Comment.new
+    # @comments = @post.comments.includes(:user)
   end
 
   def edit
   end
 
   def update
-    post = Post.find(params[:id])
-    if post.update(post_params)
-      redirect_to post_path(post.id)
+    if @post.update(post_params)
+      redirect_to post_path(@post.id), notice: '投稿を更新しました'
     else
       render :edit
     end
