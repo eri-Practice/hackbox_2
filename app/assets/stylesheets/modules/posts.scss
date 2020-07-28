@@ -1,0 +1,138 @@
+@import "style";
+
+// posts#indexのpost
+.Post {
+  padding: 10px 60px;
+  margin-bottom: 10px;
+  border: solid 1px $coral;
+  display: flex;
+  align-items: center;
+  &__image {
+    @include width-height(150px, 100px);
+    .image {
+      @include width-height(150px, 100px);
+      object-fit: cover;
+    }
+  }
+  &__right {
+    padding: 10px 0 10px 30px;
+    width: calc(100% - 100px);
+    .PostTitle {
+      overflow: hidden;
+      text-align: left;
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      word-break : break-all;
+      height: 58px;
+      text-decoration: none;
+      &:hover {
+        color: $black3;
+      } 
+    }
+    // postinfoは_style.scssに記載
+  }
+}
+
+// posts#new
+.InputPost {
+  padding: 0 20px;
+  .Form {
+    display: flex;
+    flex-direction: column;
+    &__inputTitle {
+      height: 30px;
+      padding: 2px 5px;
+      border: 1px solid $black3;
+    }
+    &__inputText {
+      height: 150px;
+      padding: 2px 5px;
+      border: 1px solid $black3;
+    }
+    &__sendBtn {
+      .btn {
+        background-color: $yellow;
+        border: none;
+      }
+    }
+    .input {
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// posts#show
+.PostTitle {
+  word-break : break-all;
+}
+.showImage {
+  @include width-height(450px, 300px);
+  object-fit: cover;
+  margin: 20px 0;
+}
+.PostText {
+  padding: 0 20px;
+  text-align: left;
+  white-space: pre-wrap;
+  word-break : break-all;
+}
+.PostEdit {
+  margin-top: 20px;
+  &__editBtn {
+    background-color: $coral;
+  }
+}
+.Like {
+  .likebtn {
+    width: 180px;
+  }
+  .likedone {
+    color: white;
+    background-color: $pink;
+    &__icon {
+      color: white;
+    }
+  }
+  .likeyet {
+    font-weight: bold;
+    color: $pink;
+    border: solid 2px $pink;
+    line-height: 20px;
+    &__icon {
+      color: $pink;
+    }
+  }
+}
+      
+// posts#search
+.TabGroup {
+  display: flex;
+  .tab {
+    text-decoration: none;
+    background-color: $lightpink;
+    margin-right: 15px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 10px;
+  }
+  .active {
+    background: white;
+  }
+}
+.PanelGroup {
+  .panel {
+    display: none;
+    .PanelWrapper {
+      margin: 20px;
+    }
+  }
+  .show {
+    display: block;
+  }
+  .SerachInfo {
+    margin-bottom: 20px;
+  }
+}
