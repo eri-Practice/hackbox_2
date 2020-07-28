@@ -10,5 +10,6 @@ Rails.application.routes.draw do
       get 'category'
       get 'rank'
     end
+    resources :comments, only: :create
   end
 end
