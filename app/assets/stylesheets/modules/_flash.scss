@@ -1,0 +1,15 @@
+@import "style";
+
+.Notification {
+  .notice {
+    background-color: $pink;
+    color: #fff;
+    text-align: center;
+  }
+
+  .alert {
+    background-color: $lightpink;
+    color: $pink;
+    text-align: center;
+  }
+}

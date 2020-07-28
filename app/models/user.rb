@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true, length: {maximum: 30}
   validates :profile, length: {maximum: 100}
+
+  has_many :posts
 end
