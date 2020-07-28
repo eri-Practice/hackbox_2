@@ -8,7 +8,8 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true, length: {maximum: 30}
   validates :profile, length: {maximum: 100}
 
-  has_many :posts
-  has_many :comments
-  has_many :likes
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
 end

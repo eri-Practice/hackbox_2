@@ -13,3 +13,19 @@
         フォロー
 .Container
   .PostsWrapper
+    - @user.liked_posts.each do |post|
+      .Post
+        .Post__image
+          =link_to post_path(post.id), class: "no-decoration" do
+            - if post.image.present?
+              = image_tag post.image.url, class: 'image'
+            - else
+              = image_tag "デフォルト画像.png", alt: "画像", class: 'image'
+        .Post__right
+          =link_to post_path(post.id), class: "no-decoration" do
+            .PostTitle= post.title
+          .PostInfo
+            .PostInfo__user
+              = link_to user_path(post.user_id), class: "UserLink" do
+                = "投稿者： #{post.user.name}"
+            .PostInfo__date= post.created_at.strftime("%Y年%m月%d日")
