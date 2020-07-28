@@ -1,0 +1,47 @@
+.Container
+  .PostTitle
+    %h1= @post.title
+  .PostInfo
+    .PostInfo__user
+      = link_to user_path(@post.user_id), class: "UserLink" do
+        = "投稿者： #{@post.user.name}"
+    .PostInfo__date= @post.created_at.strftime("%Y年%m月%d日")
+  .Like
+    -# - if user_signed_in? 
+    -#   - if Like.find_by(user_id: current_user.id, post_id: @post.id)
+    -#     =link_to post_like_path(@post.id), method: :delete, class: "likebtn likedone btn" do
+    -#       = icon('fas', 'heart', class: "likedone__icon")
+    -#       お気に入り済み
+    -#   - else
+    -#     =link_to post_likes_path(@post.id), method: :post, class: "likebtn likeyet btn" do
+    -#       = icon('fas', 'heart', class: "likeyet__icon")
+    -#       お気に入り追加
+  - if @post.image.present?
+    = image_tag @post.image.url, class: 'showImage'
+  - else
+    = image_tag "デフォルト画像.png", alt: "画像", class: 'showImage'
+
+  .PostText
+    = @post.text
+
+
+  - if user_signed_in? && current_user.id == @post.user_id
+    .PostEdit
+      =link_to edit_post_path(@post.id), class: "PostEdit__editBtn btn" do
+        編集
+      =link_to post_path(@post.id), method: :delete, class: "PostEdit__editBtn btn" do
+        削除
+
+.Container
+  %h1 コメント
+  -# - if user_signed_in?
+  -#   = form_with model: [@post, @comment], local: true, class:"Form" do |f|
+  -#     = f.text_area :text, class: 'Form__inputText input', placeholder: "コメントを入力"
+  -#     = f.submit "コメント", class: "btn"
+
+  -# - if @comments
+  -#   - @comments.each do |comment|
+  -#     .comment
+  -#       =comment.user.name
+  -#       =comment.text
+  -#       =comment.created_at.strftime("%Y/%m/%d")
