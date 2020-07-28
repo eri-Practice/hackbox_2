@@ -34,14 +34,14 @@
 
 .Container
   %h1 コメント
-  -# - if user_signed_in?
-  -#   = form_with model: [@post, @comment], local: true, class:"Form" do |f|
-  -#     = f.text_area :text, class: 'Form__inputText input', placeholder: "コメントを入力"
-  -#     = f.submit "コメント", class: "btn"
+  - if user_signed_in?
+    = form_with model: [@post, @comment], local: true, class:"Form" do |f|
+      = f.text_area :text, class: 'Form__inputText input', placeholder: "コメントを入力"
+      = f.submit "コメント", class: "btn"
 
-  -# - if @comments
-  -#   - @comments.each do |comment|
-  -#     .comment
-  -#       =comment.user.name
-  -#       =comment.text
-  -#       =comment.created_at.strftime("%Y/%m/%d")
+  - if @comments
+    - @comments.each do |comment|
+      .comment
+        =comment.user.name
+        =comment.text
+        =comment.created_at.strftime("%Y/%m/%d")
