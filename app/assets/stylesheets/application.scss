@@ -6,3 +6,16 @@
 @import "modules/top-page";
 @import "modules/user";
 @import "modules/posts";
+
+* {
+  box-sizing: border-box;
+  color: #444;
+}
+
+.Wrapper {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: $cream;
+}
