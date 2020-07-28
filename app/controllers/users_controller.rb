@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :like_posts, :followings]
+
   def show
-    @user = User.find(params[:id])
     @posts = @user.posts
   end
   
   def edit
-    
   end
 
   def update
@@ -16,9 +16,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def like_posts
+  end
+
+  def followings
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :profile, :image)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

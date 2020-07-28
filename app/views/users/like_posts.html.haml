@@ -3,14 +3,13 @@
 .SearchTop
   %ul.TabGroup
     %li
-      =link_to user_path(@user.id), class: "tab active" do
+      =link_to user_path(@user.id), class: "tab" do
         投稿 
     %li
-      =link_to like_posts_user_path, class: "tab" do
+      =link_to like_posts_user_path, class: "tab active" do
         イイね
     %li
       =link_to followings_user_path, class: "tab" do
         フォロー
 .Container
   .PostsWrapper
-    = render @posts

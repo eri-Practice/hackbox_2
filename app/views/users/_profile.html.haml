@@ -1,0 +1,19 @@
+.Container
+  .UserTop
+    .UserTop__left
+      - if  @user.image.present?
+        = image_tag @user.image.url, class: 'UserImage'
+      - else
+        = image_tag "デフォルト画像.png", alt: "画像", class: 'UserImage'
+    .UserTop__right
+      .UserName
+        = @user.name
+  .UserProfile
+    %h2 自己紹介
+    = @user.profile
+  - if user_signed_in? && current_user.id == @user.id
+    .UserEdit
+      =link_to edit_user_path(@user.id), class: "PinkBtn btn" do
+        プロフィールの編集
+      =link_to destroy_user_session_path, method: :delete, class: "PinkBtn btn" do
+        ログアウト
