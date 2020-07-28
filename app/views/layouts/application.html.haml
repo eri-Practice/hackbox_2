@@ -21,8 +21,8 @@
             ➕
           =link_to destroy_user_session_path, method: :delete, class: "HeaderRight__btn btn" do
             ログアウト
-          -# =link_to user_path(current_user.id), class: "HeaderRight__btn btn" do
-          -#   =current_user.name
+          =link_to user_path(current_user.id), class: "HeaderRight__btn btn" do
+            =current_user.name
         - else
           =link_to new_user_session_path, class: "HeaderRight__btn btn" do
             ログイン
