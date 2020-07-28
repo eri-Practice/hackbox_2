@@ -1,0 +1,14 @@
+.SearchTop
+  %ul.TabGroup
+    %li
+      =link_to search_posts_path, class: "tab" do
+        キーワード検索
+    %li
+      =link_to category_posts_path, class: "tab" do
+        カテゴリー
+    %li
+      =link_to rank_posts_path, class: "tab active" do
+        人気の投稿
+.Container
+  .Box
+    %h2.SerachInfo 人気の投稿ランキング
