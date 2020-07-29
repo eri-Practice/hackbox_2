@@ -30,3 +30,20 @@
     color: $black3;
   }
 }
+
+// ユーザー情報フォーム
+.AccountPage__form {
+  padding: 20px;
+  .FormField {
+    padding: 10px;
+  }
+}
+.TestAccount {
+  background-color: $cream;
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 10px;
+  &__title {
+    font-weight: bold;
+  }
+}

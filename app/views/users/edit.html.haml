@@ -1,6 +1,6 @@
 .Container
   %h1 アカウントの編集
-  = link_to "トップページに戻る", :back, class: 'Button'
+  = link_to "戻る", :back, class: 'Button'
   .AccountPage__form
     = form_for(current_user) do |f|
       .FormField
@@ -23,4 +23,4 @@
           = f.label :email
         .FormField__input--normal
           = f.email_field :email
-      = f.submit "Update", class: 'PinkBtn btn'
+      = f.submit "Update", class: 'btn userBtn'
